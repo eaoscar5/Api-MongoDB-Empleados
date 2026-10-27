@@ -26,7 +26,7 @@ const empleadoSchema = new mongoose.Schema(
   { versionKey: false }
 );
 
-// El tercer argumento conserva el nombre exacto de la coleccion.
+// coleccion 'Empleados' en MongoDB Atlas, con el esquema empleadoSchema.
 const Empleado = mongoose.model('Empleado', empleadoSchema, 'Empleados');
 
 function obtenerClave(parametro) {
