@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "Actividad 2.3 - API REST Empleados MongoDB Atlas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "baseUrl:POST, GET todos, GET por clave, PUT, DELETE."
+  },
+  "item": [
+    {
+      "name": "POST Crear empleado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/empleados",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "empleados"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Clave\": 101,\n  \"Nombre\": \"Ana Lopez\",\n  \"direccion\": \"Calle Reforma 123\",\n  \"fechadenacimiento\": \"2001-05-17T00:00:00.000Z\",\n  \"sexo\": \"Femenino\",\n  \"tipodesangre\": \"O+\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "GET Listar empleados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/empleados",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Empleado 101",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/empleados/101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "empleados",
+            "101"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT Actualizar empleado 101",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/empleados/101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "empleados",
+            "101"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Nombre\": \"Ana Maria Lopez\",\n  \"direccion\": \"Av. Nainari 456\",\n  \"fechadenacimiento\": \"2001-05-17T00:00:00.000Z\",\n  \"sexo\": \"Femenino\",\n  \"tipodesangre\": \"A+\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DELETE Eliminar empleado 101",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/empleados/101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "empleados",
+            "101"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api-mongo-empleados.onrender.com",
+      "type": "string"
+    }
+  ]
+}
